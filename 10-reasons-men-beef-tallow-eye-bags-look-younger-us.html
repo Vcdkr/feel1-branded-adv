@@ -36,6 +36,7 @@
       color: var(--gray-800);
       line-height: 1.5;
       font-size: 16px;
+      overflow-x: hidden;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -154,10 +155,11 @@
       gap: 40px;
       align-items: start;
     }
+    .page-wrap > * { min-width: 0; }
 
     /* ── ARTICLE ── */
-    article { background: var(--white); }
-    .article-inner { padding: 0 0 40px; }
+    article { background: var(--white); min-width: 0; }
+    .article-inner { padding: 0 0 40px; min-width: 0; }
 
     /* Advertorial label */
     .article-label {
