@@ -79,12 +79,12 @@
       display: block;
     }
     @media (max-width: 640px) {
-      .logo-text-name { font-size: 1rem; letter-spacing: 0.07em; }
-      .logo-text-sub { font-size: 0.5rem; }
+      .logo-text-name { font-size: 0.88rem; letter-spacing: 0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .logo-text-sub { font-size: 0.48rem; }
     }
     @media (max-width: 400px) {
-      .logo-text-name { font-size: 0.85rem; letter-spacing: 0.05em; }
-      .logo-text-sub { font-size: 0.45rem; }
+      .logo-text-name { font-size: 0.78rem; letter-spacing: 0.04em; }
+      .logo-text-sub { font-size: 0.42rem; }
     }
     .elementor-size-sm.kv-info-btn {
       display: inline-flex;
@@ -640,8 +640,9 @@
     }
     @media (max-width: 640px) {
       body { overflow-x: hidden; }
-      .header-inner { padding: 0 14px; height: 58px; }
-      .elementor-size-sm.kv-info-btn { padding: 7px 14px; font-size: 0.75rem; }
+      .header-inner { padding: 0 12px; height: 54px; }
+      .elementor-size-sm.kv-info-btn { padding: 6px 10px; font-size: 0.7rem; flex-shrink: 0; }
+      .logo-wrap { overflow: hidden; min-width: 0; flex: 1; }
       .kv-modal-box { padding: 24px 16px; }
       .page-wrap { margin: 16px auto; padding: 0 14px; }
       .main-headline { font-size: 1.35rem; line-height: 1.25; margin-bottom: 28px; }
