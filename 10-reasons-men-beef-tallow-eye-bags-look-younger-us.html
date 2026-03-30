@@ -595,7 +595,7 @@
     }
 
     /* ── FOOTER ── */
-    footer { background: #0f1f4b; border-top: 3px solid var(--gold); color: #fff; }
+    footer { background: #111111; border-top: 3px solid var(--gold); color: #fff; }
     .footer-main {
       max-width: 1100px;
       margin: 0 auto;
@@ -669,6 +669,25 @@
       .promo-badge-item { width: 42px; height: 42px; }
     }
   </style>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1100111345422189');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1100111345422189&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel -->
 </head>
 <body>
 
@@ -1113,7 +1132,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <div class="footer-contact-item">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0f1f4b" style="flex-shrink:0;margin-top:3px">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(255,255,255,0.6)" style="flex-shrink:0;margin-top:3px">
           <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
         <span>verwaltung@<br>kaufvergleich.com</span>
