@@ -7,12 +7,13 @@
   <meta name="description" content="Eye bags making you look tired? Here are 10 reasons thousands of men are ditching synthetic creams for Feel1 Beef Tallow Cream — and seeing real results in weeks." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --font-base: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
       --black: #0a0a0a;
       --gold: #ffdc75;
       --gold-dark: #e6c355;
@@ -41,46 +42,67 @@
 
     /* ── HEADER ── */
     header {
-      background: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      border-bottom: 1px solid var(--gray-200);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      background: #111111;
+      position: relative;
+      border-bottom: 3px solid var(--gold);
     }
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
-      height: 72px;
+      height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
     .kv-logo-img { height: 54px; width: auto; display: block; }
+    .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
+    .logo-text-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .logo-text-sub {
+      font-family: var(--font-base);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,220,117,0.7);
+      margin-top: 4px;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .logo-text-name { font-size: 0.95rem; }
+      .logo-text-sub { font-size: 0.52rem; }
+    }
     .elementor-size-sm.kv-info-btn {
       display: inline-flex;
       align-items: center;
-      background: var(--gold);
-      color: var(--black);
+      background: transparent;
+      color: var(--gold);
       font-family: var(--font-base);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      padding: 12px 28px;
-      border-radius: 10px;
-      border: 1px solid #333;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,220,117,0.5);
       text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      transition: background 0.2s, border-color 0.2s;
       cursor: pointer;
       gap: 0;
     }
-    .kv-info-btn:hover { background: #0f1f4b; border-color: #0f1f4b; color: var(--gold); }
+    .kv-info-btn:hover { background: rgba(255,220,117,0.12); border-color: var(--gold); }
     .kv-info-btn:hover .e-font-icon-svg.e-fas-search { fill: var(--gold); }
-    .elementor-button-content-wrapper { display: inline-flex; align-items: center; gap: 9px; }
+    .elementor-button-content-wrapper { display: inline-flex; align-items: center; gap: 8px; }
     .elementor-button-icon { display: flex; align-items: center; }
-    .e-font-icon-svg.e-fas-search { width: 15px; height: 15px; fill: var(--black); transition: fill 0.2s; }
+    .e-font-icon-svg.e-fas-search { width: 13px; height: 13px; fill: var(--gold); transition: fill 0.2s; }
     .elementor-button-text { line-height: 1; }
 
     /* ── MODAL ── */
@@ -120,49 +142,76 @@
     /* ── PAGE LAYOUT ── */
     .page-wrap {
       max-width: 1200px;
-      margin: 24px auto;
+      margin: 32px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: 1fr 240px;
-      gap: 28px;
+      grid-template-columns: 1fr 260px;
+      gap: 40px;
       align-items: start;
     }
 
     /* ── ARTICLE ── */
-    article {
-      background: var(--white);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    article { background: var(--white); }
+    .article-inner { padding: 0 0 40px; }
+
+    /* Advertorial label */
+    .article-label {
+      font-family: var(--font-base);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #888;
+      border-top: 2px solid #111;
+      border-bottom: 1px solid #ddd;
+      padding: 8px 0;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
-    .article-inner { padding: 32px; }
+    .article-label span { color: #111; }
 
     /* Main headline */
     .main-headline {
-      font-family: var(--font-base);
-      font-size: 2.4rem;
-      font-weight: 700;
-      line-height: 1.18;
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.12;
       letter-spacing: -0.01em;
       color: #000;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     /* Author row */
-    .author-row { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-    .author-text p { font-size: 0.82rem; line-height: 1.5; color: var(--gray-800); margin: 0; }
-    .author-text .author-name { font-weight: 700; }
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 28px;
+    }
+    .author-text p { font-size: 0.8rem; line-height: 1.5; color: #666; margin: 0; letter-spacing: 0.02em; }
+    .author-text .author-name { font-weight: 700; color: #111; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
 
-    /* Quote box */
+    /* Pull quote */
     .quote-box {
-      border-left: 4px solid var(--gold);
-      background: var(--gray-100);
-      padding: 13px 18px;
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      border-top: 2px solid #111;
+      border-bottom: 1px solid #ddd;
+      padding: 22px 0;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .quote-box p {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
       font-style: italic;
+      line-height: 1.6;
       color: #111;
     }
-    .quote-box strong { font-weight: 800; font-style: normal; }
+    .quote-box strong { font-style: normal; font-weight: 800; }
 
     /* ── COMPARISON TABLE ── */
     .comp-wrap { margin: 28px 0; overflow-x: auto; }
@@ -232,105 +281,126 @@
 
     /* ── TLDR ── */
     .tldr-text {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      margin: 24px 0 32px;
-      color: var(--gray-800);
+      font-family: var(--font-base);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin: 0 0 36px;
+      color: #555;
+      background: #f7f7f5;
+      border-left: 3px solid #111;
+      padding: 14px 18px;
     }
-    .tldr-text strong { font-weight: 800; }
+    .tldr-text strong { font-weight: 700; color: #111; }
 
     /* ── REASON BLOCK ── */
     .reason-block {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 32px;
+      margin-bottom: 40px;
       display: grid;
-      grid-template-columns: 1fr 40px 1fr;
-      gap: 0;
-      align-items: center;
-      margin-bottom: 48px;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      align-items: start;
     }
     .reason-image img {
-      border-radius: 4px;
       width: 100%;
-      object-fit: scale-down;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
     }
-    .reason-spacer { width: 40px; }
+    .reason-spacer { display: none; }
     .reason-headline {
-      font-family: var(--font-base);
-      font-size: 1.35rem;
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
       font-weight: 700;
       line-height: 1.25;
-      letter-spacing: -0.01em;
       color: #000;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .reason-body {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #333;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: #444;
     }
-    .reason-body p { margin-bottom: 14px; }
+    .reason-body p { margin-bottom: 12px; }
     .reason-body p:last-child { margin-bottom: 0; }
-    .reason-body strong { font-weight: 700; color: #000; }
+    .reason-body strong { font-weight: 700; color: #111; }
 
     /* ── INGREDIENT LIST ── */
     .ingredient-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 0;
       margin-top: 16px;
+      border: 1px solid #e8e0d5;
+      border-radius: 10px;
+      overflow: hidden;
     }
     .ingredient-item {
       display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      background: #fafafa;
-      border: 1px solid #ebebeb;
-      border-left: 4px solid var(--black);
-      border-radius: 10px;
-      padding: 14px 16px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid #e8e0d5;
+      background: #fff;
     }
-    .ingredient-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 2px;
+    .ingredient-item:last-child { border-bottom: none; }
+    .ingredient-icon { font-size: 1.25rem; flex-shrink: 0; }
+    .ingredient-info { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .ingredient-info strong { font-size: 0.9rem; font-weight: 700; color: #000; }
+    .ingredient-info span { font-size: 0.82rem; color: #777; }
+
+    /* ── MOBILE INLINE CTA ── */
+    .mobile-cta-inline {
+      display: none;
     }
-    .ingredient-info {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .ingredient-info strong {
-      font-size: 0.97rem;
-      font-weight: 700;
-      color: #000;
-    }
-    .ingredient-info span {
-      font-size: 0.88rem;
-      color: #555;
-      line-height: 1.6;
+    @media (max-width: 900px) {
+      .mobile-cta-inline {
+        display: block;
+        background: #f9f5ef;
+        border: 1.5px solid #e0d4c4;
+        border-radius: 14px;
+        padding: 20px 18px;
+        margin: -16px 0 36px;
+        text-align: center;
+      }
+      .mobile-cta-inline p {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+      .mobile-cta-inline strong { color: #111; }
+      .mobile-cta-inline .cta-btn-main {
+        display: block;
+        width: 100%;
+        font-size: 0.92rem;
+        padding: 15px 16px;
+      }
+      .mobile-cta-inline .cta-sub { margin-top: 8px; font-size: 0.78rem; }
     }
 
     /* ── RECOMMENDATION ── */
     .recommendation {
       margin-top: 48px;
-      padding-top: 32px;
-      border-top: 2px solid var(--gray-200);
+      padding-top: 28px;
+      border-top: 2px solid #111;
     }
     .recommendation h2 {
-      font-size: 1.3rem;
-      font-weight: 900;
-      letter-spacing: -0.0125em;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
       margin-bottom: 14px;
       color: #000;
     }
     .recommendation p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #333;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: #444;
       margin-bottom: 14px;
     }
     .recommendation p:last-of-type { margin-bottom: 24px; }
-    .recommendation strong { font-weight: 700; color: #000; }
+    .recommendation strong { font-weight: 700; color: #111; }
 
     /* ── CTA BUTTON ── */
     .cta-btn-wrap { text-align: center; margin: 20px 0 8px; }
@@ -357,7 +427,7 @@
     }
 
     /* ── SIDEBAR ── */
-    .sidebar { position: sticky; top: 104px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 20px; }
 
     /* ── BOTTOM STRIP ── */
     .bottom-strip {
@@ -525,7 +595,7 @@
     }
 
     /* ── FOOTER ── */
-    footer { background: #fff; border-top: 1px solid #e0e0e0; color: #0f1f4b; }
+    footer { background: #0f1f4b; border-top: 3px solid var(--gold); color: #fff; }
     .footer-main {
       max-width: 1100px;
       margin: 0 auto;
@@ -537,51 +607,45 @@
     }
     .footer-logo-link { display: inline-block; margin-bottom: 18px; }
     .footer-logo-img { height: 42px; width: auto; }
-    .footer-brand p { font-size: 0.875rem; line-height: 1.8; color: #0f1f4b; max-width: 360px; }
-    .footer-col h4 { font-size: 1rem; font-weight: 800; color: #0f1f4b; margin-bottom: 18px; }
+    .footer-brand p { font-size: 0.875rem; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 360px; }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul li a { font-size: 0.875rem; color: #0f1f4b; text-decoration: none; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: #c8a800; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; font-size: 0.875rem; color: #0f1f4b; }
+    .footer-col ul li a { font-size: 0.875rem; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; font-size: 0.875rem; color: rgba(255,255,255,0.65); }
     .footer-contact-item span { line-height: 1.6; }
-    .footer-bottom { border-top: 1px solid #e0e0e0; padding: 18px 32px; max-width: 1100px; margin: 0 auto; }
-    .footer-bottom p { font-size: 0.82rem; color: #555; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 18px 32px; max-width: 1100px; margin: 0 auto; }
+    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .page-wrap { grid-template-columns: 1fr; }
+      .page-wrap { grid-template-columns: 1fr; gap: 24px; }
       .sidebar { position: static; }
-      .article-inner { padding: 22px 20px; }
-      .main-headline { font-size: 1.6rem; }
-      .reason-block { grid-template-columns: 1fr; gap: 16px; }
-      .reason-spacer { display: none; }
-      .reason-headline { font-size: 1.1rem; }
-      .reason-body { font-size: 0.97rem; }
+      .main-headline { font-size: 2rem; }
+      .reason-block { grid-template-columns: 220px 1fr; gap: 20px; }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 28px; padding: 36px 24px 28px; }
       .promo-grid { grid-template-columns: 1fr; }
       .promo-headline { font-size: 1.5rem; }
     }
     @media (max-width: 640px) {
       body { overflow-x: hidden; }
-      .header-inner { padding: 0 12px; height: 56px; }
-      .kv-logo-img { height: 44px; }
-      .elementor-size-sm.kv-info-btn { padding: 8px 14px; font-size: 0.82rem; }
+      .header-inner { padding: 0 14px; height: 58px; }
+      .elementor-size-sm.kv-info-btn { padding: 7px 14px; font-size: 0.75rem; }
       .kv-modal-box { padding: 24px 16px; }
-      .page-wrap { margin: 10px auto; padding: 0 8px; }
-      .article-inner { padding: 16px 12px; }
-      .main-headline { font-size: 1.25rem; line-height: 1.3; }
-      .quote-box { padding: 10px 12px; font-size: 0.86rem; }
+      .page-wrap { margin: 16px auto; padding: 0 14px; }
+      .main-headline { font-size: 1.6rem; line-height: 1.2; }
+      .quote-box { padding: 16px 0; }
+      .quote-box p { font-size: 1.05rem; }
       .comp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .comp-table { font-size: 0.75rem; min-width: 0; width: 100%; }
       .comp-table tbody td { padding: 10px 8px; white-space: normal; }
       .comp-table tbody .td-label { white-space: normal; min-width: 80px; }
       .comp-table thead .th-feel1 { padding: 10px 8px; font-size: 0.76rem; }
       .comp-table thead .th-other { font-size: 0.72rem; padding: 0 8px 10px; }
-      .tldr-text { font-size: 0.93rem; }
-      .reason-block { margin-bottom: 28px; }
-      .reason-headline { font-size: 1rem; }
-      .reason-body { font-size: 0.9rem; }
+      .reason-block { grid-template-columns: 1fr; gap: 14px; margin-bottom: 28px; }
+      .reason-image img { aspect-ratio: 16/9; }
+      .reason-headline { font-size: 1.25rem; }
       .cta-btn-main { display: block; width: 100%; text-align: center; padding: 15px 16px; font-size: 0.9rem; }
       .bottom-strip { padding: 24px 14px; }
       .bottom-strip h3 { font-size: 1rem; }
@@ -594,14 +658,15 @@
       .footer-main { grid-template-columns: 1fr; gap: 20px; padding: 24px 14px 18px; }
       .footer-bottom { padding: 12px 14px; }
       #kv-sidebar-card { max-height: none !important; top: auto !important; position: relative !important; }
+      #kv-prod-img { width: 72% !important; }
+      #kv-logo { width: 56px !important; }
     }
     @media (max-width: 400px) {
-      .main-headline { font-size: 1.1rem; }
+      .main-headline { font-size: 1.35rem; }
       .comp-table { font-size: 0.68rem; }
       .comp-table tbody td { padding: 8px 6px; }
       .promo-badges { gap: 4px; }
       .promo-badge-item { width: 42px; height: 42px; }
-      .article-inner { padding: 14px 10px; }
     }
   </style>
 </head>
@@ -611,9 +676,11 @@
 <header>
   <div class="header-inner">
     <div class="logo-wrap">
-      <a href="#">
-        <img src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-2-1536x384.jpg"
-             alt="Buying Guide" class="kv-logo-img" />
+      <a href="#" style="text-decoration:none;">
+        <div class="logo-text-wrap">
+          <span class="logo-text-name">The Gentleman's Journal</span>
+          <span class="logo-text-sub">Men's Grooming &amp; Style</span>
+        </div>
       </a>
     </div>
     <a class="elementor-button elementor-button-link elementor-size-sm kv-info-btn" href="#"
@@ -652,6 +719,11 @@
   <article>
     <div class="article-inner">
 
+      <!-- EDITORIAL LABEL -->
+      <div class="article-label">
+        <span>Grooming</span> &nbsp;/&nbsp; Skincare
+      </div>
+
       <!-- MAIN HEADLINE -->
       <h1 class="main-headline">
         10 Reasons Why Men Are Choosing Beef Tallow To Erase Eye-Bags &amp; Look 10 Years Younger
@@ -660,13 +732,13 @@
       <!-- AUTHOR -->
       <div class="author-row">
         <div class="author-text">
-          <p>By <span class="author-name">Hans G.</span> &nbsp;·&nbsp; Last updated Jan. 12, 2026</p>
+          <p><span class="author-name">Hans G.</span> &nbsp;&nbsp;·&nbsp;&nbsp; Last updated Mar. 30, 2026 &nbsp;&nbsp;·&nbsp;&nbsp; 5 min read</p>
         </div>
       </div>
 
-      <!-- QUOTE BOX -->
+      <!-- PULL QUOTE -->
       <div class="quote-box">
-        "Read this <strong>BEFORE</strong> you apply more chemicals that never address the real cause of eye bags."
+        <p>"Read this <strong>before</strong> you apply more chemicals that never address the real cause of eye bags."</p>
       </div>
 
       <!-- MAIN IMAGE -->
@@ -770,6 +842,15 @@
         </div>
       </div>
 
+      <!-- MOBILE CTA after #3 -->
+      <div class="mobile-cta-inline">
+        <p><strong>Already convinced?</strong> Thousands of men are already seeing results with Feel1.</p>
+        <a href="https://go.getfeel1.com/feel1-tallow-m-eyebag-1703-US/landing" target="_blank" class="cta-btn-main">
+          Check Availability &amp; Claim 50% Off →
+        </a>
+        <p class="cta-sub"><em>30-Day Money-Back Guarantee · Free Shipping</em></p>
+      </div>
+
       <!-- REASON 4 -->
       <div class="reason-block">
         <div class="reason-image">
@@ -816,33 +897,42 @@
                 <div class="ingredient-icon">🥩</div>
                 <div class="ingredient-info">
                   <strong>Grass-fed Beef Tallow</strong>
-                  <span>Mimics your skin's natural sebum. Absorbs deep into the dermis to rebuild the fat layer under the eyes — the main cause of sunken, baggy skin.</span>
+                  <span>Mirrors your skin's own oils — absorbs deep to rebuild the fat layer under the eyes.</span>
                 </div>
               </div>
               <div class="ingredient-item">
                 <div class="ingredient-icon">🌿</div>
                 <div class="ingredient-info">
                   <strong>Jojoba Oil</strong>
-                  <span>Regulates moisture without clogging pores. Balances oil production and soothes inflammation that makes puffiness worse overnight.</span>
+                  <span>Balances moisture and calms overnight puffiness without blocking pores.</span>
                 </div>
               </div>
               <div class="ingredient-item">
                 <div class="ingredient-icon">🧈</div>
                 <div class="ingredient-info">
                   <strong>Shea Butter</strong>
-                  <span>Rich in fatty acids and vitamins A &amp; E. Repairs the skin barrier, reduces fine lines, and locks in hydration so the under-eye area stays firm.</span>
+                  <span>Firms the skin barrier, fades fine lines, locks in hydration.</span>
                 </div>
               </div>
               <div class="ingredient-item">
                 <div class="ingredient-icon">🍯</div>
                 <div class="ingredient-info">
                   <strong>Natural Honey</strong>
-                  <span>A natural humectant and antibacterial. Draws moisture into the skin and reduces the dark pigmentation that makes eye bags look worse than they are.</span>
+                  <span>Draws moisture in and lightens dark pigmentation under the eyes.</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- MOBILE CTA after #6 -->
+      <div class="mobile-cta-inline">
+        <p>Only <strong>4 clean ingredients</strong> — and they outperform everything on the shelf.</p>
+        <a href="https://go.getfeel1.com/feel1-tallow-m-eyebag-1703-US/landing" target="_blank" class="cta-btn-main">
+          Get Feel1 — $24.99 (50% Off) →
+        </a>
+        <p class="cta-sub"><em>30-Day Money-Back Guarantee · Free Shipping</em></p>
       </div>
 
       <!-- REASON 7 -->
@@ -929,30 +1019,31 @@
   <aside class="sidebar">
 
     <div id="kv-sidebar-card"
-         style="border:1.5px solid #aaa;border-radius:14px;overflow:hidden;background:#fff;text-align:center;
+         style="border:1px solid #d0d0d0;border-radius:10px;overflow:hidden;background:#fff;text-align:center;
                 position:sticky;top:16px;display:flex;flex-direction:column;">
-      <div style="padding:20px 16px 16px;flex:1;display:flex;flex-direction:column;align-items:center;">
+      <div style="padding:14px 12px 10px;flex:1;display:flex;flex-direction:column;align-items:center;">
         <img src="https://img.funnelish.com/5973/869783/1753174619-Feel1_LOGO.svg"
              alt="Feel1"
-             style="width:110px;margin:0 auto 10px;display:block;">
-        <p style="font-size:0.82rem;color:#333;margin-bottom:3px;">Recommended: <strong>★★★★★</strong></p>
-        <p style="font-size:0.75rem;color:#555;margin-bottom:10px;">4.9 | 2,100+ Reviews</p>
-        <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.9rem;color:#111;margin:0 0 12px;border:none;padding:0;line-height:1.3;">Eye Bag &amp; Anti-Aging Cream</h3>
+             id="kv-logo"
+             style="width:62px;margin:0 auto 10px;display:block;">
+        <p style="font-size:0.82rem;color:#333;margin-bottom:2px;">Recommended: <strong>★★★★★</strong></p>
+        <p style="font-size:0.78rem;color:#555;margin-bottom:7px;">4.9 | 2,100+ Reviews</p>
+        <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.88rem;color:#111;margin:0 0 8px;border:none;padding:0;line-height:1.3;">Eye Bag &amp; Anti-Aging Cream</h3>
         <img src="https://img.funnelish.com/5973/0/1772010840-image-removebg-preview%20%2813%29.png"
              alt="Feel1 Beef Tallow Cream"
              id="kv-prod-img"
-             style="width:65%;margin:0 auto 12px;display:block;object-fit:contain;">
-        <p style="font-size:0.82rem;color:#444;margin-bottom:8px;">Feel1 Beef Tallow Cream</p>
-        <div style="display:flex;align-items:baseline;gap:6px;justify-content:center;margin-bottom:14px;">
-          <span style="font-size:1.45rem;font-weight:900;color:#111;">$24.99</span>
-          <span style="font-size:0.85rem;color:#999;text-decoration:line-through;">$49.98</span>
-          <span style="font-size:0.75rem;font-weight:700;color:#2d7a4f;">50% Off</span>
+             style="width:52%;margin:0 auto 8px;display:block;object-fit:contain;">
+        <p style="font-size:0.82rem;color:#444;margin-bottom:6px;">Feel1 Beef Tallow Cream</p>
+        <div style="display:flex;align-items:baseline;gap:5px;justify-content:center;margin-bottom:10px;">
+          <span style="font-size:1.25rem;font-weight:900;color:#111;">$24.99</span>
+          <span style="font-size:0.82rem;color:#999;text-decoration:line-through;">$49.98</span>
+          <span style="font-size:0.78rem;font-weight:700;color:#2d7a4f;">50% Off</span>
         </div>
       </div>
       <a href="https://go.getfeel1.com/feel1-tallow-m-eyebag-1703-US/landing"
          target="_blank"
          style="display:block;width:100%;background:#2e9e6b;color:#fff;font-weight:800;
-                text-transform:uppercase;letter-spacing:0.1em;padding:20px 10px;font-size:0.78rem;
+                text-transform:uppercase;letter-spacing:0.08em;padding:13px 10px;font-size:0.82rem;
                 text-decoration:none;flex-shrink:0;transition:background 0.2s;"
          onmouseover="this.style.background='#237a54'" onmouseout="this.style.background='#2e9e6b'">
         Check Availability Now
@@ -1006,11 +1097,10 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <a href="#" class="footer-logo-link">
-        <img src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-2-1536x384.jpg"
-             alt="Buying Guide" class="footer-logo-img" />
+      <a href="#" class="footer-logo-link" style="text-decoration:none;">
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;margin-bottom:14px;">The Gentleman's Journal</div>
       </a>
-      <p>Welcome to Buying Guide, your trusted resource for informed purchasing decisions. Our platform specializes in presenting the best products and services through independent testing and honest reviews.</p>
+      <p>Welcome to The Gentleman's Journal — your trusted source for men's grooming, skincare, and style. We test products independently so you can make smarter decisions for yourself.</p>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
