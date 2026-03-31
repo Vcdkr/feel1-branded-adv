@@ -1386,7 +1386,7 @@
 
     <!-- Q1: Alter -->
     <div class="q-step" id="q1">
-      <div class="q1-headline">Mach dieses 1-Minuten-Quiz &amp; <span class="q1-underline">Sichere deinen Rabatt!</span></div>
+      <div class="q1-headline">Wie kannst du als Mann <span class="q1-underline">10–15 Jahre jünger aussehen?</span></div>
       <div class="q1-subtitle">Wie alt bist du? 🤔</div>
       <div class="quiz-helper">Bitte wähle eine Option</div>
       <div class="options-list">
@@ -1433,7 +1433,7 @@
 
     <!-- Q3: Interesse -->
     <div class="q-step" id="q3" style="display:none;">
-      <div class="quiz-title">Was interessiert dich an Feel1 am meisten?</div>
+      <div class="quiz-title">Was interessiert dich am meisten?</div>
       <div class="quiz-helper">Bitte wähle eine Option</div>
       <div class="options-list">
         <div class="option-item" onclick="selectAndAdvance(this,'q3','q4','amber')">
@@ -1676,7 +1676,7 @@
       </div>
     </div>
 
-    <button class="btn-continue" onclick="startLoading()">Weiter</button>
+    <button class="btn-continue" onclick="showSolutionModal()">Weiter</button>
   </div>
 </div>
 
@@ -1730,6 +1730,19 @@
 <!-- ════════════════════════════════════
      MODALS (loading interstitials)
 ════════════════════════════════════ -->
+<!-- Solution modal -->
+<div class="modal-overlay" id="modal-solution">
+  <div class="modal-box" style="text-align:center;">
+    <div class="modal-top-text">Dein Ergebnis ist bereit</div>
+    <div style="font-size:36px;margin:8px 0;">🎯</div>
+    <div class="modal-question" style="font-size:20px;margin-bottom:12px;">Wir haben die perfekte Lösung für dich gefunden!</div>
+    <p style="font-size:15px;color:var(--gray-600);line-height:1.5;margin-bottom:24px;">Basierend auf deinen Antworten empfehlen wir dir die <strong>Feel1 Rindertalg Creme</strong> — die natürliche Anti-Aging-Pflege speziell für Männer ab 40.</p>
+    <button onclick="document.getElementById('modal-solution').classList.remove('active'); startLoading();" style="width:100%;padding:16px;background:var(--brown);color:#fff;border:none;border-radius:0;font-size:17px;font-weight:700;cursor:pointer;letter-spacing:0.3px;">
+      Jetzt mit Rabatt sichern →
+    </button>
+  </div>
+</div>
+
 <div class="modal-overlay" id="modal-1">
   <div class="modal-box">
     <div class="modal-top-text">Um fortzufahren, bitte bestätigen</div>
@@ -2359,6 +2372,10 @@
       _modalResolve = resolve;
       document.getElementById(id).classList.add('active');
     });
+  }
+
+  function showSolutionModal() {
+    document.getElementById('modal-solution').classList.add('active');
   }
 
   function closeModal(id) {
